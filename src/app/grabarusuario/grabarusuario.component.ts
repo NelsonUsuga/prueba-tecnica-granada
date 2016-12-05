@@ -19,14 +19,15 @@ export class GrabarusuarioComponent{
   constructor(private http: UsuariosService) { }
 
   grabarUsuario() {
-    this.datos.nombre = this.nombre;
-    this.datos.usuario = this.usuario;
-    this.datos.telefono = this.telefono;
-    this.datos.correo = this.correo;
+    this.datos.name = this.nombre;
+    this.datos.username = this.usuario;
+    this.datos.phone = this.telefono;
+    this.datos.email = this.correo;
 
     this.http.grabarUsuario(this.datos).subscribe(
             dato => dato,
-            err => alert(err)
+            err => alert(err),
+            () => { alert('Grabado con éxito') }
 );
   }
 

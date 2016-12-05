@@ -1,0 +1,24 @@
+<p>
+  Listar usuarios.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Usuario</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{usuario.name}}</td>
+      <td>{{usuario.username}}</td>
+      <td>{{usuario.email}}</td>
+      <td>{{usuario.phone}}</td>
+      <td>{{usuario.address.city}}</td>
+    </tr>
+  </tbody>
+</table>

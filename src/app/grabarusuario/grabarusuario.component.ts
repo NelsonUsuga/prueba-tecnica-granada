@@ -14,12 +14,30 @@ export class GrabarusuarioComponent{
   usuario: string;
   telefono: string;
   correo: string;
+  mensaje: string;
+
+  valido: boolean;
 
   datos: any = new Object;
 
-  constructor(private http: UsuariosService, private router: Router) { }
+  constructor(private http: UsuariosService, private router: Router) {
+    this.nombre = '';
+    this.usuario = '';
+    this.telefono = '';
+    this.correo = '';
+    this.mensaje = '';
+
+    this.valido = false;
+
+    this.datos = new Object;
+  }
 
   grabarUsuario() {
+
+    if (!this.validarUsuario()) {
+      return;
+    }
+
     this.datos.name = this.nombre;
     this.datos.username = this.usuario;
     this.datos.phone = this.telefono;
@@ -29,7 +47,26 @@ export class GrabarusuarioComponent{
             dato => dato,
             err => alert(err),
             () => { alert('Grabado con éxito'); this.router.navigate(['/listarusuarios']); }
-);
+    );
   }
+
+  validarUsuario() {
+
+        this.mensaje = '';
+        this.valido = true;
+
+        if (this.nombre === '') {
+          this.valido = false;
+          this.mensaje = 'Faltan Nombre.';
+        }else if (this.usuario === '') {
+          this.valido = false;
+          this.mensaje = 'Faltan Usuario.';
+        }else if (isNaN(Number(this.telefono)) || (this.telefono.length < 6 && this.telefono.length > 0)) {
+          this.valido = false;
+          this.mensaje = 'Teléfono incorrecto, mínimo 6 números.';
+        }
+
+        return this.valido;
+}
 
 }

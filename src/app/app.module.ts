@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ListarusuariosModule } from './listarusuarios/listarusuarios.module';
+import { GrabarusuarioModule } from './grabarusuario/grabarusuario.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HttpModule,
     ListarusuariosModule,
+    GrabarusuarioModule,
     RouterModule
   ],
   providers: [],

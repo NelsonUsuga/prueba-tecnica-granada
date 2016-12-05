@@ -2,9 +2,13 @@
   {{title}}
 </h1>
 
-<nav>
-    <a routerLink="/listarusuarios" routerLinkActive="active">Listar</a>
-    <a routerLink="/grabarusuario" routerLinkActive="active">Grabar</a>
-  </nav>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/listarusuarios" routerLinkActive="active">Listar</a></li>
+      <li><a routerLink="/grabarusuario" routerLinkActive="active">Grabar</a></li>
+    </ul>
+  </div>
+</nav>
 
 <router-outlet></router-outlet>

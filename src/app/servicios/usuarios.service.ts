@@ -19,9 +19,8 @@ export class UsuariosService {
           -p: para cambiar puerto
           -H: para cambiar host
     */
-  // baseUrl: string = 'http://localhost:3000';
-
-  baseUrl: string = 'https://jsonplaceholder.typicode.com';
+   // baseUrl: string = 'http://localhost:3000';
+    baseUrl: string = 'https://jsonplaceholder.typicode.com';
 
   constructor(private http: Http) { }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsuariosService } from './../servicios/usuarios.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class GrabarusuarioComponent{
 
   datos: any = new Object;
 
-  constructor(private http: UsuariosService) { }
+  constructor(private http: UsuariosService, private router: Router) { }
 
   grabarUsuario() {
     this.datos.name = this.nombre;
@@ -27,7 +28,7 @@ export class GrabarusuarioComponent{
     this.http.grabarUsuario(this.datos).subscribe(
             dato => dato,
             err => alert(err),
-            () => { alert('Grabado con éxito') }
+            () => { alert('Grabado con éxito'); this.router.navigate(['/listarusuarios']); }
 );
   }
 

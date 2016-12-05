@@ -5,6 +5,7 @@ import { ListarusuariosComponent } from './listarusuarios.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UsuariosService } from './../servicios/usuarios.service';
 import { OcultarApellidoPipe } from './ocultar-apellido.pipe';
+import { ConvertirMinusculaPipe } from './convertir-minuscula.pipe';
 
 const routes: Routes = [
     { path: 'listarusuarios', component: ListarusuariosComponent }
@@ -15,7 +16,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     CommonModule
   ],
-  declarations: [ListarusuariosComponent, OcultarApellidoPipe],
+  declarations: [ListarusuariosComponent, OcultarApellidoPipe, ConvertirMinusculaPipe],
   providers: [UsuariosService]
 })
 export class ListarusuariosModule { }

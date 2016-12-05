@@ -13,10 +13,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let usuario of usuarios">
+    <tr *ngFor="let usuario  of usuarios">
       <td>{{usuario.name | ocultarApellido}}</td>
       <td>{{usuario.username}}</td>
-      <td>{{usuario.email}}</td>
+      <td>{{usuario.email | convertirMinuscula}}</td>
       <td>{{usuario.phone}}</td>
       <td>{{usuario.address.city}}</td>
     </tr>

@@ -12,8 +12,6 @@ export class ListarusuariosComponent implements OnInit {
 
   constructor(private http: UsuariosService) { }
 
-  //constructor() { }
-
   ngOnInit() {
     this.http.listarUsuarios().subscribe(
             dato => this.usuarios = dato,
